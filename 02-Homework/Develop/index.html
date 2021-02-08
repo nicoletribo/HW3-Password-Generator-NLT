@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Please select your password criteria"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="selectors">
+              <label>Length: <input type="number" name="length" min="8" max="128" value="8" id="pwlength"/></label>
+              <label>Uppercase: <input type="checkbox" name="criteria" value="upperCase"/></label>
+              <label>Lowercase: <input type="checkbox" name="criteria" value="lowerCase"/></label>
+              <label>Numbers: <input type="checkbox" name="criteria" value="numbers"/></label>
+              <label>Symbols: <input type="checkbox" name="criteria" value="symbols"/></label>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
