@@ -4,18 +4,17 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() { 
-
+  var passwordText = document.querySelector("#password");
+    
+  var lengthOfPassword = document.getElementById("pwlength").value;
+  var password = "";
   var passwordCriteria = getCheckedCheckboxesForCriteria();
   //ensure that at least one checkbox gets checked.
     if (!passwordCriteria.length) {
     alert("You must have at least one criteria selected.");
     return;
     }
-var passwordText = document.querySelector("#password");
-    passwordText.value = password;
 
-var lengthOfPassword = document.getElementById("pwlength").value;
-var password = "";
 //puts out a password that is the length chosen- between 8 and 128    
 for (var x = 0; x < lengthOfPassword; x++) {
       var criteriaSelected = selectRandomItem(passwordCriteria);
@@ -23,6 +22,7 @@ for (var x = 0; x < lengthOfPassword; x++) {
       console.log(criteriaSelected, randomCharacter)
       password += randomCharacter;
     }
+    passwordText.value = password;
 };
 //makes sure that the check boxes apply the selected criteria
 function getCheckedCheckboxesForCriteria() {
